@@ -13,7 +13,7 @@ permissions:
 jobs:
   build:
     name: Autograding
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: github.actor != 'Bot'
     steps:
       - uses: actions/checkout@v3

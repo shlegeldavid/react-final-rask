@@ -7,7 +7,7 @@ on:
 
 jobs:
     build:
-        runs-on: self-hosted
+        runs-on: ubuntu-latest
 
         permissions:
             contents: write
@@ -27,12 +27,3 @@ jobs:
               run: |
                   git config user.name "Bot"
                   git config user.email "<>"
-
-            - name: Prepare template
-              run: |
-                  git checkout --orphan main source
-                  echo '' > src/CafesTable.jsx
-                  echo '' > src/FilterCafes.jsx
-                  git add -A
-                  git commit --no-verify -m "Rebuild template (auto)"
-                  git push -f --no-verify --set-upstream origin main
